@@ -17,9 +17,7 @@ def edgenumbers(L):
     n = L.shape[0]
     m=len(row)
 
-    Index=scipy.sparse.coo_matrix((scipy.arange(0,m),(row,col)),shape=(n,n))
-
-    Index=Index+Index.transpose()
+    Index=scipy.sparse.coo_matrix((scipy.append(scipy.arange(0,m),scipy.arange(0,m)),(scipy.append(row,col),scipy.append(col,row))),shape=(n,n))
     Index=Index.tocsr()
-
+    
     return Index

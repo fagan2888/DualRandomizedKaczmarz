@@ -33,6 +33,7 @@ def solve(A, maxiters=-1, tolerance=-1,randomTree=False,userTree=None,greedy=0,
     L=L.tocsr()
     n=L.shape[0]
     index=edgenumbers.edgenumbers(L)
+    print index
     RB=kktmat.kktmat(L)
     R=RB['R']
     B=RB['B']
